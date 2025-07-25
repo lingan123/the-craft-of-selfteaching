@@ -59,6 +59,22 @@ Day2 学习笔记
     关于值的类型的补充
            除了数字、布尔值、字符串，以及上一小节介绍的列表之外，还有若干数据类型，比如 `range()`（等差数列）、`tuple`（元组）、`set`（集合）、`dictionary`（字典），再比如 `Date Type`（日期）等等。
 
+    流程控制
+        分支与循环
+        if 语句
+            if  : 
+            elif :
+            else ：
 
-    
+        for 循环 (Collection-controlled loops)以集合为基础的循环
+            range（）函数
+            range(_start, stop[, step]_)      
+
+        Continue、Break和Pass
+            continue语句将忽略其后的语句开始下次循环，而break语句将从此结束当前循环，开始执行循环之后的语句。
+            [](images/continue-break.png)
+            pass：换个角度去理解的话更清楚，pass这个语句更多是给写程序的人用的。当你写程序的时候，你可以用pass占位，而后先写别的部分，过后再回来补充本来应该写在pass所在位置的那一段代码。写嵌套的判断语句或者循环语句的时候，最常用pass，因为写嵌套挺费脑子的，一不小心就弄乱了。所以，经常需要先用pass占位，而后逐一突破。
+        
+        while循环（Condition-controlled loops）以条件为基础的循环
+            
 
