@@ -283,5 +283,65 @@ Day5
 
             有一个命令、两个Methods 与删除单个元素相关联，del , a.pop([i]), a.remove(x)。
                 del() 和 remove() 这两个Method 的返回值都是None ，而pop()这个Method会删除列表中所在索引值的值，并返回被删除的值。
+    元组（Tuple）
+        在完整掌握列表的创建与操作之后，再理解元组（Tuple）就容易了，因为它们之间的主要区别只有两个：
+            List是可变有序容器，Tuple是不可变有序容器；
+            List用方括号标识[]，Tuple用圆括号标识（）。
+        创建一个元组，用圆括号： a = ()
+        注意：创建单个元素的元组，无论是否使用圆括号，在那唯一的元素后面一定要补上一个逗号 , 
+        c = (2) #不是元组
+        c = (2,) #这才是元组
 
-                
+        元组是不可变的有序容器，所以你没法从里面删除元素。
+        但是你可以在末尾追加元素。所以，严格意义上，对元组来讲，“不可变”的意思是说，“当前已有部分不可变”.....
+        初学者总是很好奇List 和 Tuple 的区别。首先是使用场景，在将来需要更改的时候，创建List；
+        在将来不需要更改的时候，创建Tuple。其次，从计算机的角度来看，Tuple相对于List占用更小的内存。
+
+    集合（Set）
+        集合（Set）这个容器类型与列表不同的地方在于，首先它不包含重合元素，其次它是无序的；进而，集合又分为两种，可变的 Set 和不可变的 Frozen Set。
+
+        创建
+            注意：创建空集合的时候，必须用set() ,而不能用{}；
+            a = {} #注意这样创建的是一个dict(字典)，而不是set集合
+            b = set() #这样创建的才是空集合
+
+            也可以将序列数据序列转换（Casting）为集合。转换后，返回的是一个已去重的集合。
+
+        操作
+            将序列类型数据转换成set，就等于去重。当然，也可以用 in 来判断某个元素是否属于这个集合。len（）、max（）、min（），也都可以用来操作 Set，但 del 却不行————因为 Set 中的元素没有索引（它不是有序容器）。从 Set 里删除元素，得用 set.remove(elem);而 Frozen Set 是不可变的，所以不能用 set.remove(elem) 操作。
+            
+            对于集合，有相应的操作符可以对它们进行集合运算：
+                并集： |      Methods: set.union(*others)  相当于 set | other | ..
+                交集： &      Methods: set.intersection(*others)  相当于 set & other & ..
+                差集： -      Methods: set.difference(*others)    相当于 set - other-.    
+                对称差集： ^   Methods: set.symmetric_difference(other) 相当于 set^other
+        逻辑运算
+            两个集合之间可以进行逻辑比较，返回布尔值。
+            == ，< , <= , >= , !=
+
+        更新
+            对于集合，有以下更新它自身的 Method：
+                add（elem）
+                remove（elem）
+                discard(elem) #如果该元素存在于集合中，删除它。
+                clear()
+
+                set.update(*others) 相当于 set |= other |... 
+                #更新set，加入others中的所有元素。
+
+                set.intersection_update(*_others_)，相当于 set &= other & ...
+                #更新 set, 保留同时存在于 set 和所有 others 之中的元素；
+
+                set.difference_update(*_others_)，相当于 set -= other | ...
+                #更新 set, 删除所有在 others 中存在的元素；
+
+                set.symmetric_difference_update(_other_)，相当于 set ^= other
+                #更新 set, 只保留存在于 set 或 other 中的元素，但不保留同时存在于 set 和 other 中的元素；注意，该 Method *只接收一个参数*。
+
+    冻结集合
+        Frozen Set 之于 Set，正如 Tuple 之于 List，前者是不可变容器（Immutab），后者是可变容器（Mutable），无非是为了节省内存使用而设计的类别。
+
+    
+    字典（Dictionary）
+        
+
