@@ -343,5 +343,80 @@ Day5
 
     
     字典（Dictionary）
+        Map是容器中的单独一类，映射（Map）容器。映射容器只有一种，叫做字典（Dictionary）。
+        字典的每个元素，由两部分组成，key（键）和value（值），二者由一个冒号连接。
+        字典直接使用key 作为索引，并映射到与它匹配的value。
         
+        在同一个字典里，key都是唯一的。当创建字典的时候，如果其中有重复的key的话，就跟Set一样会“自动去重”————保留的是众多重复的key中的最后一个key：value（或者说，最后一个key：value “之前的那个key的value 被更新了”）。字典这个数据类型之所以叫做Map（映射），是因为字典的key都映射一个对应的value。
 
+        可用来操作的内建函数
+            len(phonebook1)
+            max(phonebook1)
+            min(phonebook1)
+            list(phonebook1)
+            tuple(phonebook1)
+            set(phonebook1)
+            sorted(phonebook1)
+            sorted(phonebook1, reverse=True)
+
+        常用Methods
+            dic.clear()
+            dic.copy()
+            dic.popitem()
+            dic.pop('A', 1234) # 如果 ‘A’在字典中存在，那么从字典中删除，并返回该索引值的value；如果‘A’不存在，就返回1234，如果没有给定默认值，那么就会出现错误。
+
+        迭代各种容器中的元素
+            for 循环迭代
+        
+        迭代的同时获取索引
+            有时，我们想同时得到有序容器中的元素及其索引，那么可以调用 enumerate（） 函数来帮我们。
+            t = ('ann', 'bob', 'joe', 'john', 'mike')
+                for i, t in enumerate(t):
+                    print(i, t)
+
+        迭代前排序
+            可以用sorted（） 和 reversed（）在迭代前先排好序。
+
+        同时迭代多个容器
+            可以在zip() 这个函数的帮助下，同时迭代两个或两个以上的容器中的元素（这样做的前提是，多个容器中的元素数量最好相同）
+        
+        迭代字典中的元素
+            for key value in dic{}
+                print(key ,value)
+
+Day6
+    文件
+        我们需要处理的数据，一定是很多，所以才必须由计算机帮我们处理————大量的数据保存、读取、写入，需要的就是文件（Files）。在这一章里，我们只介绍最简单的文本文件。
+
+    创建文件
+        创建一个文件，最简单的方式就是用Python 的内建函数 open（）
+        open（）函数的官方文档很长，以下是几个简化版：
+            open（file， mode='r'）
+            第二个参数，mode，默认值是'r',可用的mode有多种，具体看原文档。
+    删除文件
+        删除文件就得调用 os 模块，删除文件之前，要先确认文件是否存在，否则删除命令会失败。
+
+    读写文件
+        创建文件后，我们可以用f.write() 把数据写入文件，也可以用f.read() 读取文件。
+        文件有很多行的时候，我们可以用file.readline()操作，这个Method 每次调用，都会返回文件中的新一行。
+        注意，返回结果好像跟想象中的不太一样，这时候，之前见过的str.strip()就派上用场了。
+
+        与之相对的，我们可以使用file.readlines() 这个Method， 将文件做为一个列表返回，列表中的每个元素对应着文件中的每一行。既然返回的是列表，那么就可以被迭代，逐一访问每一行。
+
+        与之相对的，我们也可以用file.writelines() 把一个列表写入到一个文件中，按索引顺序（从0开始）逐行写入列表的对应元素。
+
+    with 语句块
+        针对文件操作，Python有个另外的语句块写法，更便于阅读：
+            with open （...） as f:
+                f.write(...)
+                ...
+        这样，就可以把针对当前以特定模式打开的某个文件的各种操作都写入同一个语句块了，用with 语句块的另外一个好处就是不用写file.close()了 ...
+
+    另一个完整的程序
+        李笑来举的一个精彩的例子，建议多看多思考这个例子的思路。
+    
+    总结：这一章我们介绍了文本文件的基本操作：
+        打开文件，直接用内建函数，open（），基本模式有r 和 w；
+        删除文件，得调用os模块，使用os.remove(),删除文件前最好确认文件确实存在.....
+        读写文件分别有 file.read()、file.write()、file.readline()、file.readlines()、file,writeline()、file,writelines()
+        可以用with 把相关操作都放入同一个语句块。
