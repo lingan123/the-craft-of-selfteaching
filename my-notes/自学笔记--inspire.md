@@ -682,3 +682,21 @@ Day11
             你的函数，保存在模块里之后，这个函数的用户（当然也包括你），可以用 dir() 函数查看模块中可以触达的变量名称和函数名称；
         
         
+Day12 
+    测试驱动的开发
+        现在还不是时候，等你把整本书都完成之后，记得回来再看这个链接：
+        [doctest —— Test interactive Python examples](https://docs.python.org/3/library/doctest.html)
+        [unittest —— Unit testing framework](https://docs.python.org/3/library/unittest.html)
+    
+    "通过先想办法验证结果而后从结果倒推"的开发方式，是一种很有效的方法论，叫做“Test Driven Development”，已测试为驱动的开发。
+
+    写一个测试是否是闰年的函数，给出四个测试例子：
+    如果我写的 is_leap(year) 是正确的，那么：
+         is_leap(4) 的返回值应该是 True
+         is_leap(200) 的返回值应该是 False
+         is_leap(220) 的返回值应该是 True
+         is_leap(400) 的返回值应该是 True
+
+            多读原文，领会原文中作者对这个例子的解题思路
+
+            
