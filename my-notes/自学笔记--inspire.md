@@ -688,7 +688,7 @@ Day12
         [doctest —— Test interactive Python examples](https://docs.python.org/3/library/doctest.html)
         [unittest —— Unit testing framework](https://docs.python.org/3/library/unittest.html)
     
-    "通过先想办法验证结果而后从结果倒推"的开发方式，是一种很有效的方法论，叫做“Test Driven Development”，已测试为驱动的开发。
+    "通过先想办法验证结果而后从结果倒推"的开发方式，是一种很有效的方法论，叫做“Test Driven Development”，以测试为驱动的开发。
 
     写一个测试是否是闰年的函数，给出四个测试例子：
     如果我写的 is_leap(year) 是正确的，那么：
